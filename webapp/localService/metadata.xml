@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='SAP__SELF',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="cds_xabatxemz_ui_empl" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm"><Annotation Term="Core.SchemaVersion" String="1.1.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+			<EntityType Name="employeeType" sap:content-version="1">
+				<Key><PropertyRef Name="personalnummer"/></Key><Property Name="personalnummer" Type="Edm.String" Nullable="false" MaxLength="10" sap:label=""/><Property Name="vorgesetzer" Type="Edm.String" MaxLength="50" sap:label=""/><Property Name="kuerzel" Type="Edm.String" MaxLength="50" sap:label=""/><Property Name="vorname" Type="Edm.String" MaxLength="50" sap:label=""/><Property Name="nachname" Type="Edm.String" MaxLength="50" sap:label=""/><Property Name="land" Type="Edm.String" MaxLength="2" sap:label=""/><Property Name="status" Type="Edm.String" MaxLength="20" sap:label=""/><Property Name="fakturierbar" Type="Edm.String" MaxLength="20" sap:label=""/><Property Name="jahr" Type="Edm.Int32" sap:label=""/><Property Name="kalenderwoche" Type="Edm.String" MaxLength="50" sap:label=""/><Property Name="foto" Type="Edm.String" MaxLength="10" sap:label=""/><Property Name="zeitraum" Type="Edm.String" MaxLength="50" sap:label=""/><Property Name="heatmapType" Type="Edm.String" MaxLength="3"/><NavigationProperty Name="to_heatmap" Relationship="cds_xabatxemz_ui_empl.assoc_750A9957F246D533568447AA17DB39E1"
+					FromRole="FromRole_assoc_750A9957F246D533568447AA17DB39E1" ToRole="ToRole_assoc_750A9957F246D533568447AA17DB39E1"/><NavigationProperty Name="to_heatmapProperty" Relationship="cds_xabatxemz_ui_empl.assoc_ED4D8B73BAAD94289F515374CE766566"
+					FromRole="FromRole_assoc_ED4D8B73BAAD94289F515374CE766566" ToRole="ToRole_assoc_ED4D8B73BAAD94289F515374CE766566"/></EntityType>
+			<EntityType Name="to_heatmapPropertyType" sap:content-version="1">
+				<Key><PropertyRef Name="Pernr"/></Key><Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="10" sap:filter-restriction="multi-value"/><Property Name="oHeadmapSyle" Type="Edm.String"/><Property Name="HeatmapType" Type="Edm.String" MaxLength="3"/><Property Name="Billable" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Feld zum Ankreuzen" sap:heading=""/></EntityType>
+			<EntityType Name="to_heatmapType" sap:content-version="1">
+				<Key><PropertyRef Name="heatmap_gudi"/></Key><Property Name="heatmap_gudi" Type="Edm.Guid" Nullable="false" sap:label=""/><Property Name="Pernr" Type="Edm.String" MaxLength="10"/><Property Name="XAchse" Type="Edm.String" MaxLength="50"/><Property Name="YAchse" Type="Edm.String" MaxLength="3"/><Property Name="Renevue" Type="Edm.Int32" sap:label=""/><Property Name="HeatmapStart" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Datum"
+					sap:quickinfo="Feld vom Typ DATS"/><Property Name="Anzahl" Type="Edm.Byte"/><Property Name="Billable" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Feld zum Ankreuzen" sap:heading=""/><Property Name="Heatmap_type" Type="Edm.String" MaxLength="3"/></EntityType>
+			<EntityType Name="SAP__Currency" sap:content-version="1">
+				<Key><PropertyRef Name="CurrencyCode"/></Key><Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Währung" sap:semantics="currency-code"/><Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Iso-Code"/><Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Kurztext"/><Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Dezimalen"/></EntityType>
+			<EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+				<Key><PropertyRef Name="UnitCode"/></Key><Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Interne Maßeinheit" sap:semantics="unit-of-measure"/><Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO-Code"/><Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Kaufmännisch"/><Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Maßeinheitentext"/><Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Dezimalstellen"/></EntityType>
+			<EntityType Name="SAP__DocumentDescription" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID"/><Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/><Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:label="Zeitstempel"/><Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="256"/><Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256"/><NavigationProperty Name="Format" Relationship="cds_xabatxemz_ui_empl.to_format" FromRole="FromRole_to_format" ToRole="ToRole_to_format"/><NavigationProperty Name="TableColumns" Relationship="cds_xabatxemz_ui_empl.to_tablecolumns" FromRole="FromRole_to_tablecolumns"
+					ToRole="ToRole_to_tablecolumns"/><NavigationProperty Name="CoverPage" Relationship="cds_xabatxemz_ui_empl.to_coverpage" FromRole="FromRole_to_coverpage"
+					ToRole="ToRole_to_coverpage"/><NavigationProperty Name="Signature" Relationship="cds_xabatxemz_ui_empl.to_signature" FromRole="FromRole_to_signature"
+					ToRole="ToRole_to_signature"/><NavigationProperty Name="PDFStandard" Relationship="cds_xabatxemz_ui_empl.to_pdfstandard" FromRole="FromRole_to_pdfstandard"
+					ToRole="ToRole_to_pdfstandard"/></EntityType>
+			<EntityType Name="SAP__Format" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="FitToPage" Type="cds_xabatxemz_ui_empl.SAP__FitToPage" Nullable="false"/><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="FontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Orientation" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PaperSize" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BorderSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="MarginSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="FontName" Type="Edm.String" Nullable="false" MaxLength="255" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__PDFStandard" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="UsePDFAConformance" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="DoEnableAccessibility" Type="Edm.Boolean" Nullable="false" sap:label="Flag" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__TableColumns" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/><PropertyRef Name="Name"/><PropertyRef Name="Header"/></Key><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Header" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="HorizontalAlignment" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__CoverPage" sap:content-version="1">
+				<Key><PropertyRef Name="Title"/><PropertyRef Name="Id"/><PropertyRef Name="Name"/></Key><Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__Signature" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="DoSign" Type="Edm.Boolean" Nullable="false" sap:label="Flag" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Reason" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__ValueHelp" sap:content-version="1">
+				<Key><PropertyRef Name="VALUEHELP"/></Key><Property Name="VALUEHELP" Type="Edm.String" Nullable="false"/><Property Name="FIELD_VALUE" Type="Edm.String" Nullable="false" MaxLength="10"/><Property Name="DESCRIPTION" Type="Edm.String"/></EntityType>
+			<ComplexType Name="SAP__FitToPage"><Property Name="ErrorRecoveryBehavior" Type="Edm.String" Nullable="false" MaxLength="8" sap:creatable="false" sap:updatable="false"
+				sap:sortable="false" sap:filterable="false"/><Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+				sap:filterable="false"/><Property Name="MinimumFontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+				sap:filterable="false"/></ComplexType>
+			<Association Name="assoc_ED4D8B73BAAD94289F515374CE766566" sap:content-version="1"><End Type="cds_xabatxemz_ui_empl.employeeType" Multiplicity="1" Role="FromRole_assoc_ED4D8B73BAAD94289F515374CE766566"/><End Type="cds_xabatxemz_ui_empl.to_heatmapPropertyType" Multiplicity="0..1" Role="ToRole_assoc_ED4D8B73BAAD94289F515374CE766566"/></Association>
+			<Association Name="assoc_750A9957F246D533568447AA17DB39E1" sap:content-version="1"><End Type="cds_xabatxemz_ui_empl.employeeType" Multiplicity="1" Role="FromRole_assoc_750A9957F246D533568447AA17DB39E1"/><End Type="cds_xabatxemz_ui_empl.to_heatmapType" Multiplicity="*" Role="ToRole_assoc_750A9957F246D533568447AA17DB39E1"/></Association>
+			<Association Name="to_format" sap:content-version="1"><End Type="cds_xabatxemz_ui_empl.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_format"/><End Type="cds_xabatxemz_ui_empl.SAP__Format" Multiplicity="1" Role="ToRole_to_format"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_format"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_format"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_tablecolumns" sap:content-version="1"><End Type="cds_xabatxemz_ui_empl.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_tablecolumns"/><End Type="cds_xabatxemz_ui_empl.SAP__TableColumns" Multiplicity="*" Role="ToRole_to_tablecolumns"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_tablecolumns"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_tablecolumns"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_coverpage" sap:content-version="1"><End Type="cds_xabatxemz_ui_empl.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_coverpage"/><End Type="cds_xabatxemz_ui_empl.SAP__CoverPage" Multiplicity="*" Role="ToRole_to_coverpage"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_coverpage"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_coverpage"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_signature" sap:content-version="1"><End Type="cds_xabatxemz_ui_empl.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_signature"/><End Type="cds_xabatxemz_ui_empl.SAP__Signature" Multiplicity="1" Role="ToRole_to_signature"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_signature"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_signature"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_pdfstandard" sap:content-version="1"><End Type="cds_xabatxemz_ui_empl.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_pdfstandard"/><End Type="cds_xabatxemz_ui_empl.SAP__PDFStandard" Multiplicity="1" Role="ToRole_to_pdfstandard"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_pdfstandard"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_pdfstandard"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="cds_xabatxemz_ui_empl_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx pdf"><EntitySet Name="SAP__Currencies" EntityType="cds_xabatxemz_ui_empl.SAP__Currency" sap:content-version="1"/><EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_xabatxemz_ui_empl.SAP__UnitOfMeasure" sap:content-version="1"/><EntitySet Name="SAP__MyDocumentDescriptions" EntityType="cds_xabatxemz_ui_empl.SAP__DocumentDescription" sap:content-version="1"/><EntitySet Name="SAP__FormatSet" EntityType="cds_xabatxemz_ui_empl.SAP__Format" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__PDFStandardSet" EntityType="cds_xabatxemz_ui_empl.SAP__PDFStandard" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__TableColumnsSet" EntityType="cds_xabatxemz_ui_empl.SAP__TableColumns" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__CoverPageSet" EntityType="cds_xabatxemz_ui_empl.SAP__CoverPage" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__SignatureSet" EntityType="cds_xabatxemz_ui_empl.SAP__Signature" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__ValueHelpSet" EntityType="cds_xabatxemz_ui_empl.SAP__ValueHelp" sap:content-version="1"/><EntitySet Name="employee" EntityType="cds_xabatxemz_ui_empl.employeeType" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="to_heatmapProperty" EntityType="cds_xabatxemz_ui_empl.to_heatmapPropertyType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="to_heatmap" EntityType="cds_xabatxemz_ui_empl.to_heatmapType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_750A9957F246D533568447AA17DB39E1" Association="cds_xabatxemz_ui_empl.assoc_750A9957F246D533568447AA17DB39E1"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="employee" Role="FromRole_assoc_750A9957F246D533568447AA17DB39E1"/><End EntitySet="to_heatmap" Role="ToRole_assoc_750A9957F246D533568447AA17DB39E1"/></AssociationSet>
+				<AssociationSet Name="to_formatSet" Association="cds_xabatxemz_ui_empl.to_format" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_format"/><End EntitySet="SAP__FormatSet" Role="ToRole_to_format"/></AssociationSet>
+				<AssociationSet Name="to_pdfstandardSet" Association="cds_xabatxemz_ui_empl.to_pdfstandard" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_pdfstandard"/><End EntitySet="SAP__PDFStandardSet" Role="ToRole_to_pdfstandard"/></AssociationSet>
+				<AssociationSet Name="to_tablecolumnsSet" Association="cds_xabatxemz_ui_empl.to_tablecolumns" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_tablecolumns"/><End EntitySet="SAP__TableColumnsSet" Role="ToRole_to_tablecolumns"/></AssociationSet>
+				<AssociationSet Name="to_signatureSet" Association="cds_xabatxemz_ui_empl.to_signature" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_signature"/><End EntitySet="SAP__SignatureSet" Role="ToRole_to_signature"/></AssociationSet>
+				<AssociationSet Name="assoc_ED4D8B73BAAD94289F515374CE766566" Association="cds_xabatxemz_ui_empl.assoc_ED4D8B73BAAD94289F515374CE766566"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="employee" Role="FromRole_assoc_ED4D8B73BAAD94289F515374CE766566"/><End EntitySet="to_heatmapProperty" Role="ToRole_assoc_ED4D8B73BAAD94289F515374CE766566"/></AssociationSet>
+				<AssociationSet Name="to_coverpageSet" Association="cds_xabatxemz_ui_empl.to_coverpage" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_coverpage"/><End EntitySet="SAP__CoverPageSet" Role="ToRole_to_coverpage"/></AssociationSet>
+			</EntityContainer>
+			<Annotations Target="cds_xabatxemz_ui_empl.cds_xabatxemz_ui_empl_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.cds_xabatxemz_ui_empl_Entities/to_heatmapProperty"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="FilterExpressionRestrictions">
+							<Collection>
+								<Record><PropertyValue Property="Property" PropertyPath="Pernr"/><PropertyValue Property="AllowedExpressions" String="MultiValue"/></Record>
+								<Record><PropertyValue Property="Property" PropertyPath="oHeadmapSyle"/><PropertyValue Property="AllowedExpressions" String="SearchExpression"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>oHeadmapSyle</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.cds_xabatxemz_ui_empl_Entities/employee" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_heatmap"/>
+									<PropertyValue Property="InsertRestrictions">
+										<Record><PropertyValue Property="Insertable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_heatmapProperty"/>
+									<PropertyValue Property="InsertRestrictions">
+										<Record><PropertyValue Property="Insertable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.to_heatmapPropertyType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>Pernr</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.to_heatmapType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>heatmap_gudi</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.cds_xabatxemz_ui_empl_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.CurrencyCodes">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__Currencies"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.UnitsOfMeasure">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__PDF.Features">
+					<Record><PropertyValue Property="DocumentDescriptionReference" String="./$metadata"/><PropertyValue Property="DocumentDescriptionCollection" String="SAP__MyDocumentDescriptions"/><PropertyValue Property="ArchiveFormat" Bool="true"/><PropertyValue Property="CoverPage" Bool="true"/><PropertyValue Property="Signature" Bool="true"/><PropertyValue Property="FitToPage" Bool="true"/><PropertyValue Property="FontName" Bool="true"/><PropertyValue Property="FontSize" Bool="true"/><PropertyValue Property="Margin" Bool="true"/><PropertyValue Property="Border" Bool="true"/><PropertyValue Property="ResultSizeDefault" Int="20000"/><PropertyValue Property="ResultSizeMaximum" Int="20000"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.SAP__DocumentDescription">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__MyDocumentDescriptions"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__Currency/CurrencyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="SAP__common.Text" Path="Text"/><Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/><Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__UnitOfMeasure/UnitCode" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="SAP__common.Text" Path="Text"/><Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/><Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/><Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="SAP__core.AlternateKeys">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Key">
+								<Collection>
+									<Record><PropertyValue Property="Name" Path="ExternalCode"/><PropertyValue Property="Alias" String="ExternalCode"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__DocumentDescription/CreatedBy" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="SAP__core.Computed"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__DocumentDescription/CreatedAt" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="SAP__core.Computed"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__DocumentDescription" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="SAP__capabilties.InsertRestrictions">
+					<Record><PropertyValue Property="Insertable" Bool="false"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilties.UpdateRestrictions">
+					<Record><PropertyValue Property="Updatable" Bool="false"/>
+						<PropertyValue Property="QueryOptions">
+							<Record><PropertyValue Property="SelectSupported" Bool="true"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilties.DeleteRestrictions">
+					<Record><PropertyValue Property="Deletable" Bool="false"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilties.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="FilterExpressionRestrictions">
+							<Collection>
+								<Record><PropertyValue Property="Property" PropertyPath="Format/Orientation"/><PropertyValue Property="AllowedExpressions" String="Multivalue"/></Record>
+								<Record><PropertyValue Property="Property" PropertyPath="Format/PaperSize"/><PropertyValue Property="AllowedExpressions" String="Multivalue"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__Format/FitToPage/ErrorRecoveryBehavior" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="../../../../SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27ErrorRecoveryBehaviour%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__Format/FontName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27FontName%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__Format/PaperSize" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27PaperSize%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__Format/Orientation" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27FontName%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.SAP__TableColumns/HorizontalAlignment" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HorizontalAlignment%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations><atom:link rel="self"
+					href="https://webidecp-a6cc7c20e.dispatcher.hana.ondemand.com/destinations/T22/sap/opu/odata/abat/EMZ_EMPL_O2/$metadata"
+					xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+					href="https://webidecp-a6cc7c20e.dispatcher.hana.ondemand.com/destinations/T22/sap/opu/odata/abat/EMZ_EMPL_O2/$metadata"
+					xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

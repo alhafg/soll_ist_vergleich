@@ -1,0 +1,228 @@
+<core:FragmentDefinition xmlns:microchart="sap.suite.ui.microchart" xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data">
+	<Dialog id="mainDialog" title="KW12 20.01.2024" contentWidth="80%">
+		<content>
+			<VBox>
+				<HBox>
+					<layout:VerticalLayout>
+						<layout:layoutData>
+							<layout:GridData span="XL12 L12 M12 S12"/>
+						</layout:layoutData>
+						<Text text="Übersicht über die Fakturierbar und nicht Fakturierbar Projekte" class="sapUiSmallMargin"/>
+						<FlexBox width="100%" height="100%" alignItems="Start" class="sapUiSmallMargin">
+							<items>
+								<microchart:InteractiveBarChart labelWidth="30%" displayedBars="6">
+									<microchart:bars>
+										<microchart:InteractiveBarChartBar label="Fakturierbar" value="-10" displayedValue="-10%"/>
+										<microchart:InteractiveBarChartBar label="nicht Fakturierbar" value="20" displayedValue="-20%"/>
+									</microchart:bars>
+								</microchart:InteractiveBarChart>
+							</items>
+						</FlexBox>
+					</layout:VerticalLayout>
+					<!--DonutChart-->
+					<!--		<layout:VerticalLayout>
+						<layout:layoutData>
+							<layout:GridData span="XL12 L12 M12 S12"/>
+						</layout:layoutData>
+						<Text text="Soll / Wochenstundenplan" class="sapUiSmallMargin"/>
+						<FlexBox width="20rem" height="10rem" alignItems="Center" class="sapUiSmallMargin">
+							<items>
+								<microchart:InteractiveDonutChart color="Good" selectionChanged="onSelectionChanged" displayedSegments="4" press="press">
+									<microchart:segments>
+										<microchart:InteractiveDonutChartSegment color="#172C51" label="Fakturierbar" value="80" displayedValue="80%"/>
+										<microchart:InteractiveDonutChartSegment color="#ABE2AB" label="Nicht fakturierbar" value="20" displayedValue="20%"/>
+									</microchart:segments>
+								</microchart:InteractiveDonutChart>
+							</items>
+						</FlexBox>
+					</layout:VerticalLayout>-->
+					<!--DonutChart-->
+					<!--		<layout:VerticalLayout>
+						<layout:layoutData>
+							<layout:GridData span="XL12 L12 M12 S12"/>
+						</layout:layoutData>
+						<Text text="Ist / Wochenstundenplan" class="sapUiSmallMargin"/>
+						<FlexBox width="20rem" height="10rem" alignItems="Center" class="sapUiSmallMargin">
+							<items>
+								<microchart:InteractiveDonutChart selectionChanged="onSelectionChanged" displayedSegments="4" press="press">
+									<microchart:segments>
+										<microchart:InteractiveDonutChartSegment label="Fakturierbar" value="60" displayedValue="60%"/>
+										<microchart:InteractiveDonutChartSegment label="Nicht fakturierbar" value="40" displayedValue="40%"/>
+									</microchart:segments>
+								</microchart:InteractiveDonutChart>
+							</items>
+						</FlexBox>
+					</layout:VerticalLayout>-->
+					<!--BarChartBar-->
+					<layout:VerticalLayout>
+						<layout:layoutData>
+							<layout:GridData span="XL12 L12 M12 S12"/>
+						</layout:layoutData>
+						<Text text="Übersicht über die Projekte" class="sapUiSmallMargin"/>
+						<FlexBox width="250%" height="100%" alignItems="Start" class="sapUiSmallMargin">
+							<items>
+								<microchart:InteractiveBarChart labelWidth="30%" displayedBars="6">
+									<microchart:bars>
+										<microchart:InteractiveBarChartBar color="Good" label="Projekt 1" value="5" displayedValue="5h"/>
+										<microchart:InteractiveBarChartBar label="Projekt 2" value="-10" displayedValue="-10h"/>
+										<microchart:InteractiveBarChartBar label="Projekt 3" value="0" displayedValue="0h"/>
+										<microchart:InteractiveBarChartBar label="Projekt 4" value="8" displayedValue="8h"/>
+										<microchart:InteractiveBarChartBar label="Projekt 5" value="0" displayedValue="0h"/>
+										<microchart:InteractiveBarChartBar label="Projekt 6" value="-4" displayedValue="-4h"/>
+									</microchart:bars>
+								</microchart:InteractiveBarChart>
+							</items>
+						</FlexBox>
+					</layout:VerticalLayout>
+				</HBox>
+			</VBox>
+			<VBox class="sapUiSmallMargin" id="formContainer">
+				<Table id="idProductsTable" inset="false" items="{demoData>/fakturierbarTable}" width="60%">
+					<headerToolbar>
+						<OverflowToolbar>
+							<content>
+								<Title text="Fakturierbar" level="H2"/>
+							</content>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column >
+							<Text text="PSP"/>
+						</Column>
+						<Column >
+							<Text text="Beschreibung"/>
+						</Column>
+						<Column >
+							<Text text="Soll"/>
+						</Column>
+						<Column >
+							<Text text="Ist"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem vAlign="Middle">
+							<cells>
+								<Text text="{demoData>PSP}"/>
+								<Text text="{demoData>Beschreibung}"/>
+								<Text text="{demoData>soll}"/>
+								<Text text="{demoData>ist}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+			<VBox class="sapUiSmallMargin" id="formContainerEmployment1">
+				<Table id="idProductsTable1" inset="false" items="{demoData>/nichtFakturierbarTable}" width="60%">
+					<headerToolbar>
+						<OverflowToolbar>
+							<content>
+								<Title text="Nicht fakturierbar" level="H2"/>
+							</content>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column >
+							<Text text="PSP"/>
+						</Column>
+						<Column >
+							<Text text="Beschreibung"/>
+						</Column>
+						<Column >
+							<Text text="Soll"/>
+						</Column>
+						<Column >
+							<Text text="Ist"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem vAlign="Middle">
+							<cells>
+								<Text text="{demoData>PSP}"/>
+								<Text text="{demoData>Beschreibung}"/>
+								<Text text="{demoData>soll}"/>
+								<Text text="{demoData>ist}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+			<VBox>
+				<layout:FixFlex id="chartFixFlex2" minFlexSize="500">
+					<layout:fixContent>
+						<Panel id="settingsPanel2" class="panelStyle" expandable="true" expanded="true" headerText="Settings" width="auto">
+							<headerToolbar>
+								<OverflowToolbar>
+									<Title text="Übersicht über mehrere Wochen"/>
+								</OverflowToolbar>
+							</headerToolbar>
+							<content>
+								<HBox class="settingsHBox" width="100%">
+									<VBox class="settingsBox sapUiSmallMargin">
+										<Label text="Anzahl" design="Bold" class="settingsLabel"/>
+										<Slider id="Anzahl" min="1" max="24" enableTickmarks="true" width="1000%" value="12" change="onChangeAnzahl">
+											<ResponsiveScale tickmarksBetweenLabels="3"/>
+										</Slider>
+									</VBox>
+								</HBox>
+							</content>
+						</Panel>
+					</layout:fixContent>
+					<layout:flexContent>
+						<viz:VizFrame id="idVizFrame23" uiConfig="{applicationSet:'fiori'}" height='90%' width="90%" vizType='stacked_combination'
+							vizProperties="{title:{text:'Soll Planung'}, plotArea : {dataShape: { primaryAxis: ['line', 'bar', 'bar'] } , colorPalette: ['#f5b04d','#4cba6b', '#a1dbb1' ] } }">
+							<viz:dataset>
+								<viz.data:FlattenedDataset data="{demoData>/data}">
+									<viz.data:dimensions>
+										<viz.data:DimensionDefinition name="Week" value="{demoData>week}"/>
+									</viz.data:dimensions>
+									<viz.data:measures>
+										<viz.data:MeasureDefinition name="Abweichung" value="{demoData>a}"/>
+										<viz.data:MeasureDefinition name="Fakturierbar" value="{demoData>f}"/>
+										<viz.data:MeasureDefinition name="Nicht Fakturierbar" value="{demoData>nf}"/>
+									</viz.data:measures>
+								</viz.data:FlattenedDataset>
+							</viz:dataset>
+							<viz:feeds>
+								<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Abweichung,Fakturierbar,Nicht Fakturierbar"/>
+								<viz.feeds:FeedItem id="feedCategoryAxis" uid="categoryAxis" type="Dimension" values="Week"/>
+							</viz:feeds>
+						</viz:VizFrame>
+					</layout:flexContent>
+				</layout:FixFlex>
+				<layout:FixFlex id="chartFdfsdafixFlex51" minFlexSize="500">
+					<layout:flexContent>
+						<viz:VizFrame id="idVizFramsdfsdfe231" uiConfig="{applicationSet:'fiori'}" height='90%' width="90%" vizType='100_dual_stacked_column'
+							>
+							<viz:dataset>
+								<viz.data:FlattenedDataset data="{demoData>/test_data_1}">
+									<viz.data:dimensions>
+										<viz.data:DimensionDefinition name="Week" value="{demoData>week}"/>
+									</viz.data:dimensions>
+									<viz.data:measures>
+										<viz.data:MeasureDefinition name="Soll_F" value="{demoData>sf}"/>
+										<viz.data:MeasureDefinition name="Soll_NF" value="{demoData>snf}"/>
+										<viz.data:MeasureDefinition name="Ist_F" value="{demoData>if}"/>
+										<viz.data:MeasureDefinition name="Ist_NF" value="{demoData>inf}"/>
+									</viz.data:measures>
+								</viz.data:FlattenedDataset>
+							</viz:dataset>
+							<viz:feeds>
+								<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Ist_F,Ist_NF"/>
+								<viz.feeds:FeedItem uid="valueAxis2" type="Measure" values="Soll_F,Soll_NF"/>
+								<viz.feeds:FeedItem id="feedCategoryAxis1asdf" uid="categoryAxis" type="Dimension" values="Week"/>
+							</viz:feeds>
+							<viz:dependents>
+								<viz:Popover id="idPopOveasdfasr231"></viz:Popover>
+							</viz:dependents>
+						</viz:VizFrame>
+					</layout:flexContent>
+				</layout:FixFlex>
+			</VBox>
+		</content>
+		<buttons>
+			<Button id="Close" text="Close" press=".onDialogClosePress" ariaHasPopup="Dialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

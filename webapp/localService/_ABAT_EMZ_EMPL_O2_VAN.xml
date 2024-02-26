@@ -1,0 +1,107 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/></edmx:Reference>
+	<edmx:Reference Uri="../../../abat/emz_empl_o2/$metadata"><edmx:Include Namespace="EMZ_EMPL_O2" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="com.sap.abat.emz_empl_o2_van.v1">
+			<Annotations Target="cds_xabatxemz_ui_empl.employeeType/jahr"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.employeeType/kalenderwoche"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.employeeType">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String=""/><PropertyValue Property="ID" String="Auslastung"/><PropertyValue Property="Target" AnnotationPath="@UI.Identification"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="personalnummer"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="foto"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="land"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="kuerzel"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="vorname"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="nachname"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="vorgesetzer"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="status"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="fakturierbar"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="zeitraum"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="foto"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="kuerzel"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="vorname"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="nachname"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="fakturierbar"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>land</PropertyPath>
+						<PropertyPath>kuerzel</PropertyPath>
+						<PropertyPath>vorname</PropertyPath>
+						<PropertyPath>nachname</PropertyPath>
+						<PropertyPath>vorgesetzer</PropertyPath>
+						<PropertyPath>status</PropertyPath>
+						<PropertyPath>fakturierbar</PropertyPath>
+						<PropertyPath>zeitraum</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.to_heatmapPropertyType">
+				<Annotation Term="UI.FieldGroup">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="oHeadmapSyle"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="oHeadmapSyle"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_xabatxemz_ui_empl.to_heatmapType">
+				<Annotation Term="UI.HeaderFacets">
+					<Collection>
+						<Record Type="UI.CollectionFacet"><PropertyValue Property="ID" String="FacetCollection"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String=""/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#heatmapQualifierHeader"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="heatmapQualifierHeader">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="XAchse"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="YAchse"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Renevue"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="heatmapQualifier">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="XAchse"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="YAchse"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Renevue"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

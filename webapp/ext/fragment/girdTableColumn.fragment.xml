@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:layout="sap.ui.layout" xmlns:viz.data="sap.viz.ui5.data" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/10">
+	<table:Column width="200%" hAlign="Center" class="noSpace">
+		<Label text="Heatmap" textAlign="Center"/>
+		<table:customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "heatmap", "columnIndex" : "100"}'/>
+		</table:customData>
+		<table:template class="noSpace">
+			<layout:FixFlex id='idFixFlexRessorces' minFlexSize="30" class="sapUiNoContentPadding">
+				<layout:flexContent class="noSpace">
+					<viz:Popover id="idPopoverRessorces"></viz:Popover>
+					<viz:VizFrame class="noSpace" id="idVizFrameRessources" uiConfig="{applicationSet:'fiori'}" width="100%" height='100%' vizType='heatmap'
+						legendVisible="false" selectData="onSelectData"
+						vizProperties="{ plotArea:{ drawingEffect: 'glossy', dataLabel:{visible:true}, dataPointStyle:{ rules : [ { dataContext:{ Renevue:{ max : -5}}, properties:{color:'#FF8888'} } , { dataContext:{ Renevue:{ min : 5}}, properties:{color:'#ABE2AB'} } ,{ dataContext:{ XAchse:{ min : 15}}, properties:{color:'#F2F2F2'} } ], others:{ properties:{color:'#FABD64'} } } }, general: { layout: { padding: 0.01 } }, tooltip: { visible: true }, valueAxis: { title: { visible: false }, visible: false, axisLine: { visible: false }, label: { linesOfWrap: 2, visible: false, style: { fontSize: '2px' } } }, categoryAxis: { title: { visible: false }, label: { visible: true, linesOfWrap: 2, rotation: 'fixed', angle: 0, style: { fontSize: '10px' } }, axisLine: { visible: false }, axisTick: { shortTickVisible: false } }, valueAxis2: { title: { visible: false }, visible: true, axisLine: { visible: false }, label: { linesOfWrap: 2, visible: true, style: { fontSize: '10px' } } }, categoryAxis2: { title: { visible: false }, label: { visible: false, linesOfWrap: 2, rotation: 'fixed', angle: 30, style: { fontSize: '12px' } }, axisLine: { visible: false }, axisTick: { shortTickVisible: false } }, legend:{visible:false}, title:{visible:false}}">
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{ path: 'to_heatmap'}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="YAchse" value="{YAchse}"/>
+									<viz.data:DimensionDefinition name="XAchse" value="{XAchse}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Renevue" value="{Renevue}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem uid="color" type="Measure" values="Renevue"/>
+							<viz.feeds:FeedItem uid="categoryAxis2" type="Dimension" values="YAchse"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="XAchse"/>
+						</viz:feeds>
+					</viz:VizFrame>
+				</layout:flexContent>
+			</layout:FixFlex>
+		</table:template>
+	</table:Column>
+</core:FragmentDefinition>
